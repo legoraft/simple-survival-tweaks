@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "simple-survival-tweaks",
+	"version": "${version}",
+	"name": "Simple Survival Tweaks",
+	"description": "A mod that allows you to tweak aspects of your survival world",
+	"authors": [
+		"Legoraft"
+	],
+	"contact": {
+		"homepage": "https://github.com/LegoRaft/simple-survival-tweaks",
+		"sources": "https://github.com/LegoRaft/simple-survival-tweaks",
+		"issues": "https://github.com/LegoRaft/simple-survival-tweaks/issues"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/simple-survival-tweaks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+		],
+		"client": [
+		]
+	},
+	"mixins": [
+		"simple-survival-tweaks.mixins.json",
+		{
+			"config": "simple-survival-tweaks.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
