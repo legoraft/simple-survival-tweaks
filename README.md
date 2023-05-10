@@ -13,7 +13,7 @@ The current feature list contains:
 If you have any bug reports or a suggestion for the mod leave them [here](https://github.com/LegoRaft/simple-survival-tweaks/issues)
 
 ### Dependencies
-Simple survival tweaks doesn't require any other mods.
+Simple survival tweaks requires the [Fabric API](https://modrinth.com/mod/fabric-api)
 
 ### Build
 
