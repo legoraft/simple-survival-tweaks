@@ -1,4 +1,13 @@
+<p align="center">
+    <img src="src/main/resources/assets/simple-survival-tweaks/icon.png" width="72px" height="72px"/>
+</p>
+
 <h1 align="center">Simple Survival Tweaks</h1>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/for%20MC-1.19.4-green" alt="Minecraft version"/>
+    <img src="https://img.shields.io/github/v/release/legoraft/simple-survival-tweaks?color=yellow&include_prereleases" alt="Release"/>
+</p>
 
 ## Information
 
@@ -15,8 +24,11 @@ If you have any bug reports or a suggestion for the mod leave them [here](https:
 ### Dependencies
 Simple survival tweaks requires the [Fabric API](https://modrinth.com/mod/fabric-api)
 
-### Build
+### Installation
+Releases for the mod are found on [Modrinth](https://modrinth.com/mod/simple-survival-tweaks) and at [Releases](https://github.com/LegoRaft/simple-survival-tweaks/releases). <br>
+For an installation tutorial, go [here](https://fabricmc.net/wiki/install). _Note: Simple armor hud **requires** the Fabric API_
 
+### Build
 You can also build the mod directly from the github repository. <br>
 For this, download or clone the github repository. <br>
 Next, go to the directory with `cd user/directory/mod` (where you use the actual directories where the mod is stored, this is just an example.) <br>
