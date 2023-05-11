@@ -11,15 +11,18 @@ import java.util.Properties;
 public class config {
 
     public static boolean SURVIVAL_DEBUG_STICK = true;
+    public static boolean NO_EXPENSIVE = true;
 
     private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("survivaltweaks.properties");
 
     public void write(Properties properties) {
         properties.setProperty("survival_debug_stick", Boolean.toString(SURVIVAL_DEBUG_STICK));
+        properties.setProperty("no_too_expensive", Boolean.toString(NO_EXPENSIVE));
     }
 
     public void read(Properties properties) {
         SURVIVAL_DEBUG_STICK = Boolean.parseBoolean(properties.getProperty("survival_debug_stick"));
+        NO_EXPENSIVE = Boolean.parseBoolean(properties.getProperty("no_too_expensive"));
     }
 
     public void save() {
