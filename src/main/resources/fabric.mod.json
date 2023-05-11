@@ -17,6 +17,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
+		 	"com.survivaltweaks.survivalTweaks"
 		],
 		"client": [
 		]
