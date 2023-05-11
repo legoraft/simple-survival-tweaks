@@ -22,7 +22,7 @@ public class anvilScreenMixin {
     @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/Property;get()I", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD)
     public void cheapRename(CallbackInfo ci, ItemStack itemStack, int i, int j, int k) {
         if (k > 0 && k == i) {
-            levelCost.set(config.ANVIL_COST);
+            levelCost.set(config.ANVIL_RENAME_COST);
         }
     }
 
