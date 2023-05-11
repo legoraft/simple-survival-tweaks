@@ -3,7 +3,6 @@
 	"package": "com.survivaltweaks.mixin.client",
 	"compatibilityLevel": "JAVA_17",
 	"client": [
-		"anvilScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
