@@ -3,7 +3,8 @@
 	"package": "com.survivaltweaks.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"itemStackMixin"
+		"itemStackMixin",
+		"debugStickMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
