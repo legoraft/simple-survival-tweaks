@@ -12,7 +12,7 @@
 ## Information
 
 ### Features
-This mod adds some small tweaks and qol rules to your survival world. Currently there isn't a config file, so all features will be active by default. 
+This mod adds some small tweaks and qol rules to your survival world. These rules are changeable through the `survivaltweaks.properties` file. _Note: Ender man griefing isn't configurable yet_
 
 The current feature list contains:
 - No "too expensive" warning which prevents having a lot of enchants on a single item. _Note: This also makes enchanting in an anvil cheaper_
