@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"itemStackMixin",
-		"debugStickMixin"
+		"debugStickMixin",
+		"anvilScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
