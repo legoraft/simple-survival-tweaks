@@ -12,7 +12,9 @@ public class survivalTweaks implements ModInitializer {
 
     public void onInitialize()  {
         CONFIG.load();
-        addDebugStickTrade();
+        if (config.SURVIVAL_DEBUG_STICK) {
+            addDebugStickTrade();
+        }
         System.out.println("Simple Survival Tweaks loaded!");
     }
 
