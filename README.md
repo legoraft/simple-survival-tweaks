@@ -12,13 +12,14 @@
 ## Information
 
 ### Features
-This mod adds some small tweaks and qol rules to your survival world. These rules are changeable through the `survivaltweaks.properties` file. _Note: Ender man griefing isn't configurable yet_
+This mod adds some small tweaks and qol rules to your survival world. These rules are changeable through the `survivaltweaks.properties` file.
 
 The current feature list contains:
-- No "too expensive" warning which prevents having a lot of enchants on a single item. _Note: This also makes enchanting in an anvil cheaper_
-- No enderman griefing, except pumpkins and melons for farming purposes
-- Make the debug stick functional in survival
-- Cheap renaming, which allows renaming items to always cost 1 level
+- No 'too expensive' warning which prevents having a lot of enchants on a single item. _Note: This also makes enchanting in an anvil cheaper_
+- No enderman griefing, except pumpkins and melons for farming purposes.
+- Make the debug stick functional in survival.
+- Cheap renaming, which allows renaming items to always cost 1 level.
+- No xp penalty, which removes the 7 level cap for dropped xp on death, and instead drops 50% of your xp.
 
 ### Bugs
 If you have any bug reports or a suggestion for the mod leave them [here](https://github.com/LegoRaft/simple-survival-tweaks/issues)
