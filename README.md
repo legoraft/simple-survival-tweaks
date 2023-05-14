@@ -21,6 +21,8 @@ The current feature list contains:
 - Cheap renaming, which allows renaming items to always cost 1 level.
 - No xp penalty, which removes the 7 level cap for dropped xp on death, and instead drops 50% of your xp.
 
+Check out a full explanation of the features and the config file on the [wiki](https://github.com/legoraft/simple-survival-tweaks/wiki)
+
 ### Bugs
 If you have any bug reports or a suggestion for the mod leave them [here](https://github.com/LegoRaft/simple-survival-tweaks/issues)
 
