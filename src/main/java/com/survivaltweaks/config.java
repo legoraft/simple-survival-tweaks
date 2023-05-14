@@ -14,6 +14,7 @@ public class config {
     public static boolean NO_EXPENSIVE = false;
     public static boolean CHEAP_RENAME = false;
     public static boolean NO_ENDERMAN_GRIEF = false;
+    public static boolean NO_XP_PENALTY = false;
 
     private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("survivaltweaks.properties");
 
@@ -22,6 +23,7 @@ public class config {
         properties.setProperty("no_too_expensive", Boolean.toString(NO_EXPENSIVE));
         properties.setProperty("cheap_rename", Boolean.toString(CHEAP_RENAME));
         properties.setProperty("no_enderman_grief", Boolean.toString(NO_ENDERMAN_GRIEF));
+        properties.setProperty("no_xp_penalty", Boolean.toString(NO_XP_PENALTY));
     }
 
     public void read(Properties properties) {
@@ -29,6 +31,7 @@ public class config {
         NO_EXPENSIVE = Boolean.parseBoolean(properties.getProperty("no_too_expensive"));
         CHEAP_RENAME = Boolean.parseBoolean(properties.getProperty("cheap_rename"));
         NO_ENDERMAN_GRIEF = Boolean.parseBoolean(properties.getProperty("no_enderman_grief"));
+        NO_XP_PENALTY = Boolean.parseBoolean(properties.getProperty("no_xp_penalty"));
     }
 
     public void save() {
