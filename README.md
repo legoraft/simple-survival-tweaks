@@ -5,8 +5,9 @@
 <h1 align="center">Simple Survival Tweaks</h1>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/for%20MC-1.19.4-green" alt="Minecraft version"/>
-    <img src="https://img.shields.io/github/v/release/legoraft/simple-survival-tweaks?color=yellow&include_prereleases" alt="Release"/>
+    <img src="https://img.shields.io/badge/for%20MC-1.19.4,%201.20-green" alt="Minecraft version"/>
+    <img src="https://img.shields.io/github/v/release/legoraft/simple-survival-tweaks?color=yellow" alt="Release"/>
+    <img src="https://img.shields.io/github/downloads/legoraft/simple-survival-tweaks/total" alt="Downloads"
 </p>
 
 ## Information
