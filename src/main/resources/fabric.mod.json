@@ -20,7 +20,8 @@
 		 	"com.survivaltweaks.survivalTweaks"
 		],
 		"client": [
-		]
+		],
+		"modmenu": [ "com.survivaltweaks.survivalTweaksModMenu" ]
 	},
 	"mixins": [
 		"simple-survival-tweaks.mixins.json",
