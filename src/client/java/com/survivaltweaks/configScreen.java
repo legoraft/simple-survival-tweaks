@@ -40,10 +40,8 @@ public class configScreen extends SpruceScreen {
         super.init();
 
         SpruceOptionListWidget list = new SpruceOptionListWidget(Position.of(0, 34), this.width, this.height - 69);
-        list.addOptionEntry(this.survivalDebugStickToggle, null);
-        list.addOptionEntry(this.endermanGriefToggle, null);
-        list.addOptionEntry(this.noExpensiveToggle, null);
-        list.addOptionEntry(this.cheapRenameToggle, null);
+        list.addOptionEntry(this.survivalDebugStickToggle, this.endermanGriefToggle);
+        list.addOptionEntry(this.noExpensiveToggle, this.cheapRenameToggle);
         list.addOptionEntry(this.noXpPenaltyToggle, null);
 
         this.addDrawableChild(list);
