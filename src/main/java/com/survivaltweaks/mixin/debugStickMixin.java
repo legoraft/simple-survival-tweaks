@@ -54,10 +54,11 @@ public abstract class debugStickMixin {
             property = getNextProperty(collection, property);
             nbtCompound.putString(blockName, property.getName());
             sendMessage(player, Text.of(String.format("Selected \"%s\" (%s)", property.getName(), getValueString(state, property))));
-        } if (collection.isEmpty() || property == null) {
+        } else {
+            if (collection.isEmpty() || property == null) {
             sendMessage(player, Text.of(String.format("%s has no properties", blockName)));
             return;
-        } else {
+            }
             BlockState newState = cycle(state, property, false);
             world.setBlockState(pos, newState, 18);
             sendMessage(player, Text.of(String.format("\"%s\" to %s", property.getName(), getValueString(newState, property))));
