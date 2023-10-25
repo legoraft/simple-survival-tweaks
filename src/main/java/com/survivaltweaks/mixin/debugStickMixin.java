@@ -37,7 +37,7 @@ public abstract class debugStickMixin {
 
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void survivalDebug(PlayerEntity player, BlockState state, WorldAccess world, BlockPos pos, boolean update, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (player.isCreativeLevelTwoOp()) { return; }
+        if (player.isCreativeLevelTwoOp() || config.SURVIVAL_DEBUG_STICK) { return; }
 
         Block block = state.getBlock();
         StateManager<Block, BlockState> stateManager = block.getStateManager();
