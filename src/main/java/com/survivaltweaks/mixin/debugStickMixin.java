@@ -1,5 +1,6 @@
 package com.survivaltweaks.mixin;
 
+import com.survivaltweaks.config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
