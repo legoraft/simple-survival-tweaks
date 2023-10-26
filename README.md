@@ -40,4 +40,4 @@ You can also build the mod directly from the github repository. <br>
 For this, download or clone the github repository. <br>
 Next, go to the directory with `cd user/directory/mod` (where you use the actual directories where the mod is stored, this is just an example.) <br>
 After this, run `gradlew build`. <br>
-When the task is completed, go to the 'build' and the 'libs' folders, and drag the simple-survival-tweaks-1.x.x-x.x.x file to your mods folder. Ignore the -dev, -sources and -sources-dev files, you can delete these.
+When the task is completed, go to the 'build' and the 'libs' folders, and drag the simple-survival-tweaks-1.x.x-x.x.x file to your mods folder. Ignore the -sources file, you can delete it.
