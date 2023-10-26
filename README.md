@@ -19,7 +19,7 @@ This mod adds some small tweaks and qol rules to your survival world. These rule
 The current feature list contains:
 - No 'too expensive' warning which prevents having a lot of enchants on a single item. _Note: This also makes enchanting in an anvil cheaper_
 - No enderman griefing, except pumpkins and melons for farming purposes.
-- Make the debug stick functional in survival.
+- Make the debug stick functional in survival. This changes the debug stick behavior in survival, with shift-right click cycling through properties and right click editing them.
 - Cheap renaming, which allows renaming items to always cost 1 level.
 - No xp penalty, which removes the 7 level cap for dropped xp on death, and instead drops 50% of your xp.
 
