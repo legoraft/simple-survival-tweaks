@@ -12,10 +12,9 @@
 </p>
 
 ## Information
+This mod adds some small tweaks and QOL rules to your survival world. These rules are changeable through the `survivaltweaks.properties` file and the in-game option screen which requires [mod menu](https://modrinth.com/mod/modmenu).
 
 ### Features
-This mod adds some small tweaks and qol rules to your survival world. These rules are changeable through the `survivaltweaks.properties` file.
-
 The current feature list contains:
 - No 'too expensive' warning which prevents having a lot of enchants on a single item. _Note: This also makes enchanting in an anvil cheaper_
 - No enderman griefing, except pumpkins and melons for farming purposes.
@@ -26,18 +25,17 @@ The current feature list contains:
 Check out a full explanation of the features and the config file on the [wiki](https://github.com/legoraft/simple-survival-tweaks/wiki)
 
 ### Bugs
-If you have any bug reports or a suggestion for the mod leave them [here](https://github.com/LegoRaft/simple-survival-tweaks/issues)
+If you have any bug reports or a suggestion for the mod leave them [here](https://github.com/legoraft/simple-survival-tweaks/issues). If you have any coding experience and want to help out with development, fork the repository and open a [pull request](https://github.com/legoraft/simple-survival-tweaks/pulls).
 
 ### Dependencies
-Simple survival tweaks requires the [Fabric API](https://modrinth.com/mod/fabric-api)
+Simple survival tweaks requires the [Fabric API](https://modrinth.com/mod/fabric-api) and has an option screen accessible through [Mod Menu](https://modrinth.com/mod/modmenu).
 
 ### Installation
-Releases for the mod are found on [Modrinth](https://modrinth.com/mod/simple-survival-tweaks) and at [Releases](https://github.com/LegoRaft/simple-survival-tweaks/releases). <br>
-For an installation tutorial, go [here](https://fabricmc.net/wiki/install). _Note: Simple armor hud **requires** the Fabric API_
+Releases for the mod are found on [Modrinth](https://modrinth.com/mod/simple-survival-tweaks) and at [Releases](https://github.com/LegoRaft/simple-survival-tweaks/releases). After downloading, you can put the `.jar` file in your `mods` folder. If you don't have fabric installed, take a look at this [installation tutorial](https://fabricmc.net/wiki/install) _Note: Simple survival tweaks **requires** the Fabric API_
 
 ### Build
-You can also build the mod directly from the github repository. <br>
-For this, download or clone the github repository. <br>
-Next, go to the directory with `cd user/directory/mod` (where you use the actual directories where the mod is stored, this is just an example.) <br>
-After this, run `gradlew build`. <br>
-When the task is completed, go to the 'build' and the 'libs' folders, and drag the simple-survival-tweaks-1.x.x-x.x.x file to your mods folder. Ignore the -sources file, you can delete it.
+To build from source, follow these steps:
+1. Open a terminal and clone the repository using `git clone https://github.com/legoraft/simple-survival-tweaks`.
+2. Go into this directory using `cd <location of cloned repo>`.
+3. Run `./gradlew build` on linux or macos or `gradlew build` on windows.
+4. Get the mod file from the `/build/libs` folder.
