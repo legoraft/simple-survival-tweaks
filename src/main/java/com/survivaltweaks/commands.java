@@ -16,7 +16,7 @@ import static com.mojang.brigadier.arguments.BoolArgumentType.getBool;
 
 public class commands {
 
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher, Properties properties) {
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess, CommandManager.RegistrationEnvironment registrationEnvironment) {
 
         dispatcher.register(CommandManager.literal("survivaltweaks")
                 .then(CommandManager.literal("noExpensive")
