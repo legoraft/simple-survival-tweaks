@@ -54,15 +54,15 @@ public abstract class debugStickMixin {
         if (player.isSneaking()) {
             property = getNextProperty(collection, property);
             nbtCompound.putString(blockName, property.getName());
-            sendMessage(player, Text.of(String.format("Selected \"%s\" (%s)", property.getName(), getValueString(state, property))));
+            sendMessage(player, Text.translatable("debugstick.select", property.getName(), getValueString(state, property)));
         } else {
             if (collection.isEmpty() || property == null) {
-            sendMessage(player, Text.of(String.format("%s has no properties", blockName)));
+            sendMessage(player, Text.translatable("debugstick.empty", blockName));
             return;
             }
             BlockState newState = cycle(state, property, false);
             world.setBlockState(pos, newState, 18);
-            sendMessage(player, Text.of(String.format("\"%s\" to %s", property.getName(), getValueString(newState, property))));
+            sendMessage(player, Text.translatable("debugstick.modify", property.getName(), getValueString(newState, property)));
         }
         cir.setReturnValue(true);
     }

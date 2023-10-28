@@ -1,0 +1,23 @@
+{
+  "title.config": "Simple survival tweaks configuration",
+
+  "config.survivaldebugstick": "Survival debug stick",
+  "config.noendermangrief": "No enderman grief",
+  "config.notooexpensive": "No \"Too Expensive\"",
+  "config.cheaprename": "Cheap rename",
+  "config.noxppenalty": "No XP penalty",
+  "config.done": "Done",
+
+  "config.description.survivadebugstick": "Makes the debug stick usable in survival",
+  "config.description.noendermangrief": "Prevents enderman from picking up anything except pumpkins and melons",
+  "config.description.notooexpensive": "Prevents enchantments in an anvil from getting \"Too Expensive\"",
+  "config.description.cheaprename": "Makes renames always cost 1 level in the anvil",
+  "config.description.noxppenalty": "Removes the level cap of 7 XP levels when you die",
+
+  "commands.tweak.set": "Rule %s is now set to: ",
+  "commands.tweak.query": "Rule %s is currently set to: ",
+
+  "debugstick.select": "Selected \"%s\" (%s)",
+  "debugstick.modify": "\"%s\" to %s",
+  "debugstick.empty": "%s has no properties"
+}
