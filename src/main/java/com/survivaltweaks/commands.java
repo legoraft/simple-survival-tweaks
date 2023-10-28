@@ -1,18 +1,12 @@
 package com.survivaltweaks;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.context.CommandContextBuilder;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
-import org.apache.logging.log4j.core.jmx.Server;
 
 import static com.mojang.brigadier.arguments.BoolArgumentType.bool;
-import static com.mojang.brigadier.arguments.BoolArgumentType.getBool;
 
 public class commands {
 
@@ -20,11 +14,51 @@ public class commands {
 
         dispatcher.register(CommandManager.literal("survivaltweaks")
                 .then(CommandManager.literal("noExpensive")
-                        .then(CommandManager.argument("Bool", bool())
+                        .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_EXPENSIVE = !config.NO_EXPENSIVE;
                                     applyChanges();
-                                    c.getSource().sendMessage(Text.literal("Rule noExpensive is now: " + config.NO_EXPENSIVE));
+                                    c.getSource().sendMessage(Text.literal("Rule noExpensive is now set to: " + config.NO_EXPENSIVE));
+                                    return 1;
+                                })
+                        )
+                )
+                .then(CommandManager.literal("endermanGriefing")
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.NO_ENDERMAN_GRIEF = !config.NO_ENDERMAN_GRIEF;
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.literal("Rule endermanGriefing is now set to: " + !config.NO_ENDERMAN_GRIEF));
+                                    return 1;
+                                })
+                        )
+                )
+                .then(CommandManager.literal("survivalDebugStick")
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.SURVIVAL_DEBUG_STICK = !config.SURVIVAL_DEBUG_STICK;
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.literal("Rule survivalDebugStick is now set to: " + config.SURVIVAL_DEBUG_STICK));
+                                    return 1;
+                                })
+                        )
+                )
+                .then(CommandManager.literal("cheapRename")
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.CHEAP_RENAME = !config.CHEAP_RENAME;
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.literal("Rule cheapRename is now set to: " + config.CHEAP_RENAME));
+                                    return 1;
+                                })
+                        )
+                )
+                .then(CommandManager.literal("noXpPenalty")
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.NO_XP_PENALTY = !config.NO_XP_PENALTY;
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.literal("Rule noXpPenalty is now set to: " + config.NO_XP_PENALTY));
                                     return 1;
                                 })
                         )
