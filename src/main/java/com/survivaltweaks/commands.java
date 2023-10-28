@@ -14,7 +14,7 @@ public class commands {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess, CommandManager.RegistrationEnvironment registrationEnvironment) {
 
         dispatcher.register(CommandManager.literal("survivaltweaks")
-                .then(CommandManager.literal("noExpensive")
+                .then(CommandManager.literal("noExpensive").executes(c -> { c.getSource().sendMessage(Text.literal("Rule noExpensive is currently set to: " + config.NO_EXPENSIVE)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_EXPENSIVE = getBool(c, "boolean");
@@ -24,7 +24,7 @@ public class commands {
                                 })
                         )
                 )
-                .then(CommandManager.literal("noEndermanGriefing")
+                .then(CommandManager.literal("noEndermanGriefing").executes(c -> { c.getSource().sendMessage(Text.literal("Rule noEndermanGriefing is currently set to: " + config.NO_ENDERMAN_GRIEF)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_ENDERMAN_GRIEF = getBool(c, "boolean");
@@ -34,7 +34,7 @@ public class commands {
                                 })
                         )
                 )
-                .then(CommandManager.literal("survivalDebugStick")
+                .then(CommandManager.literal("survivalDebugStick").executes(c -> { c.getSource().sendMessage(Text.literal("Rule survivalDebugStick is currently set to: " + config.SURVIVAL_DEBUG_STICK)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.SURVIVAL_DEBUG_STICK = getBool(c, "boolean");
@@ -44,7 +44,7 @@ public class commands {
                                 })
                         )
                 )
-                .then(CommandManager.literal("cheapRename")
+                .then(CommandManager.literal("cheapRename").executes(c -> { c.getSource().sendMessage(Text.literal("Rule cheapRename is currently set to: " + config.CHEAP_RENAME)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.CHEAP_RENAME = getBool(c, "boolean");
@@ -54,7 +54,7 @@ public class commands {
                                 })
                         )
                 )
-                .then(CommandManager.literal("noXpPenalty")
+                .then(CommandManager.literal("noXpPenalty").executes(c -> { c.getSource().sendMessage(Text.literal("Rule noXpPenalty is currently set to: " + config.NO_XP_PENALTY)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_XP_PENALTY = getBool(c, "boolean");
