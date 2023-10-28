@@ -9,8 +9,10 @@ import net.minecraft.village.TradeOffer;
 public class survivalTweaksRegistries {
 
     public static void registerTweaks() {
-        registerDebugStickTrade();
         registerCommands();
+        if (config.SURVIVAL_DEBUG_STICK) {
+            registerDebugStickTrade();
+        }
     }
 
     private static void registerCommands() {
@@ -18,7 +20,6 @@ public class survivalTweaksRegistries {
     }
 
     private static void registerDebugStickTrade() {
-        if (!config.SURVIVAL_DEBUG_STICK) { return; }
         ItemStack debugStick = Items.DEBUG_STICK.getDefaultStack();
         TradeOfferHelper.registerWanderingTraderOffers(2, factory -> factory.add((((entity, random) -> new TradeOffer(new ItemStack(Items.EMERALD, 5), debugStick, 2, 1, 1.0F)))));
     }
