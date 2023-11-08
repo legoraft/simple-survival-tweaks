@@ -1,0 +1,23 @@
+{
+  "title.config": "Simple survival tweaks configuratie",
+
+  "config.survivaldebugstick": "Survival debug stick",
+  "config.noendermangrief": "Geen enderman grief",
+  "config.notooexpensive": "Geen \"Te Duur\"",
+  "config.cheaprename": "Goedkoop Hernoemen",
+  "config.noxppenalty": "Geen XP verlies",
+  "config.done": "Gereed",
+
+  "config.description.survivadebugstick": "Maakt de debug stick bruikbaar in survival",
+  "config.description.noendermangrief": "Voorkomt het oppakken van blokken door endermannen, behalve pompoenen en meloenen",
+  "config.description.notooexpensive": "Zorgt ervoor dat betoveren in een aambeeld nooit \"Te Duur\" wordt",
+  "config.description.cheaprename": "Hernoemen van items in een aambeeld kost altijd 1 level",
+  "config.description.noxppenalty": "Maakt het mogelijk om meer dan 7 levels terug te krijgen als je dood gaat",
+
+  "commands.tweak.set": "Regel %s gewijzigd naar '%s'",
+  "commands.tweak.query": "Regel %s is op dit moment '%s'",
+
+  "debugstick.select": "'%s' geselecteerd (%s)",
+  "debugstick.modify": "'%s' naar %s",
+  "debugstick.empty": "%s heeft geen eigenschappen"
+}
