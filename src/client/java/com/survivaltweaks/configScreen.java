@@ -24,14 +24,14 @@ public class configScreen extends SpruceScreen {
     private final SpruceOption noXpPenaltyToggle;
 
     public configScreen(@Nullable Screen parent) {
-        super(Text.literal("Armorhud test GUI"));
+        super(Text.translatable("title.config"));
         this.parent = parent;
 
-        this.survivalDebugStickToggle = new SpruceBooleanOption("Survival debug stick", () -> config.SURVIVAL_DEBUG_STICK, newValue -> config.SURVIVAL_DEBUG_STICK = newValue, Text.literal("Makes the debug stick usable in survival"));
-        this.endermanGriefToggle = new SpruceBooleanOption("No enderman grief", () -> config.NO_ENDERMAN_GRIEF, newValue -> config.NO_ENDERMAN_GRIEF = newValue, Text.literal("Prevents enderman from picking up anything except pumpkins and melons"));
-        this.noExpensiveToggle = new SpruceBooleanOption("No 'Too Expensive'", () -> config.NO_EXPENSIVE, newValue -> config.NO_EXPENSIVE = newValue, Text.literal("Prevents enchantments in an anvil from getting 'Too Expensive"));
-        this.cheapRenameToggle = new SpruceBooleanOption("Cheap rename", () -> config.CHEAP_RENAME, newValue -> config.CHEAP_RENAME = newValue, Text.literal("Makes renames always cost 1 level in the anvil"));
-        this.noXpPenaltyToggle = new SpruceBooleanOption("No XP penalty", () -> config.NO_XP_PENALTY, newValue -> config.NO_XP_PENALTY = newValue, Text.literal("Removes the level cap of 7 XP levels when you die"));
+        this.survivalDebugStickToggle = new SpruceBooleanOption("config.survivaldebugstick", () -> config.SURVIVAL_DEBUG_STICK, newValue -> config.SURVIVAL_DEBUG_STICK = newValue, Text.translatable("config.description.survivaldebugstick"));
+        this.endermanGriefToggle = new SpruceBooleanOption("config.noendermangrief", () -> config.NO_ENDERMAN_GRIEF, newValue -> config.NO_ENDERMAN_GRIEF = newValue, Text.translatable("config.description.noendermagrief"));
+        this.noExpensiveToggle = new SpruceBooleanOption("config.notooexpensive", () -> config.NO_EXPENSIVE, newValue -> config.NO_EXPENSIVE = newValue, Text.translatable("config.description.notooexpensive"));
+        this.cheapRenameToggle = new SpruceBooleanOption("config.cheaprename", () -> config.CHEAP_RENAME, newValue -> config.CHEAP_RENAME = newValue, Text.translatable("config.description.cheaprename"));
+        this.noXpPenaltyToggle = new SpruceBooleanOption("config.noxppenalty", () -> config.NO_XP_PENALTY, newValue -> config.NO_XP_PENALTY = newValue, Text.translatable("config.description.noxppenalty"));
 
     }
 
@@ -46,7 +46,7 @@ public class configScreen extends SpruceScreen {
 
         this.addDrawableChild(list);
 
-        this.addDrawableChild(new SpruceButtonWidget(Position.of(this.width / 2 - 100, this.height - 30), 200, 20, Text.literal("Done"), button -> this.applyChanges()));
+        this.addDrawableChild(new SpruceButtonWidget(Position.of(this.width / 2 - 100, this.height - 30), 200, 20, Text.translatable("config.done"), button -> this.applyChanges()));
     }
 
     @Override
