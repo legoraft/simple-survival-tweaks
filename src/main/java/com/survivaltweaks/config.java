@@ -15,6 +15,8 @@ public class config {
     public static boolean CHEAP_RENAME = false;
     public static boolean NO_ENDERMAN_GRIEF = false;
     public static boolean NO_XP_PENALTY = false;
+    public static boolean PHANTOM_MOBCAP = false;
+
 
     private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("survivaltweaks.properties");
 
@@ -24,6 +26,7 @@ public class config {
         properties.setProperty("cheap_rename", Boolean.toString(CHEAP_RENAME));
         properties.setProperty("no_enderman_grief", Boolean.toString(NO_ENDERMAN_GRIEF));
         properties.setProperty("no_xp_penalty", Boolean.toString(NO_XP_PENALTY));
+        properties.setProperty("phantom_mobcap", Boolean.toString(PHANTOM_MOBCAP));
     }
 
     public void read(Properties properties) {
@@ -32,6 +35,7 @@ public class config {
         CHEAP_RENAME = Boolean.parseBoolean(properties.getProperty("cheap_rename"));
         NO_ENDERMAN_GRIEF = Boolean.parseBoolean(properties.getProperty("no_enderman_grief"));
         NO_XP_PENALTY = Boolean.parseBoolean(properties.getProperty("no_xp_penalty"));
+        PHANTOM_MOBCAP = Boolean.parseBoolean(properties.getProperty("phantom_mobcap"));
     }
 
     public void save() {

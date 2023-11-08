@@ -64,6 +64,16 @@ public class commands {
                                 })
                         )
                 )
+                .then(CommandManager.literal("phantomMobcap").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "phantomMobcap", config.PHANTOM_MOBCAP)); return 1;})
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.PHANTOM_MOBCAP = getBool(c, "boolean");
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "phantomMobcap", config.PHANTOM_MOBCAP));
+                                    return 1;
+                                })
+                        )
+                )
         );
     }
 
