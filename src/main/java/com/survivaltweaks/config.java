@@ -17,9 +17,6 @@ public class config {
     public static boolean NO_XP_PENALTY = false;
     public static boolean PHANTOM_MOBCAP = false;
 
-
-    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("survivaltweaks.properties");
-
     public void write(Properties properties) {
         properties.setProperty("survival_debug_stick", Boolean.toString(SURVIVAL_DEBUG_STICK));
         properties.setProperty("no_too_expensive", Boolean.toString(NO_EXPENSIVE));
@@ -38,38 +35,38 @@ public class config {
         PHANTOM_MOBCAP = Boolean.parseBoolean(properties.getProperty("phantom_mobcap"));
     }
 
-    public void save() {
+    public void save(Path configPath) {
         Properties properties = new Properties();
         write(properties);
-        if (!Files.exists(CONFIG_PATH)) {
+        if (!Files.exists(configPath)) {
             try {
-                Files.createFile(CONFIG_PATH);
+                Files.createFile(configPath);
             } catch (IOException e) {
                 LogManager.getLogger("Simple Survival Tweaks").error("Failed to create config file");
                 e.printStackTrace();
             }
         }
         try {
-            properties.store(Files.newOutputStream(CONFIG_PATH), "Simple Survival Tweaks config file");
+            properties.store(Files.newOutputStream(configPath), "Simple Survival Tweaks config file");
         } catch (IOException e) {
             LogManager.getLogger("Simple Survival Tweaks").error("Failed to write config");
             e.printStackTrace();
         }
     }
 
-    public void load() {
+    public void load(Path configPath) {
         Properties properties = new Properties();
-        if (!Files.exists(CONFIG_PATH)) {
+        if (!Files.exists(configPath)) {
             try {
-                Files.createFile(CONFIG_PATH);
-                save();
+                Files.createFile(configPath);
+                save(configPath);
             } catch (IOException e) {
                 LogManager.getLogger("Simple Survival Tweaks").error("Failed to create config file");
                 e.printStackTrace();
             }
         }
         try {
-            properties.load(Files.newInputStream(CONFIG_PATH));
+            properties.load(Files.newInputStream(configPath));
         } catch (IOException e) {
             LogManager.getLogger("Simple Survival Tweaks").error("Failed to read config");
             e.printStackTrace();

@@ -81,7 +81,7 @@ public class commands {
         config config = survivalTweaks.CONFIG;
         java.util.Properties properties = new java.util.Properties();
         config.write(properties);
-        config.save();
+        config.save(survivalTweaks.CONFIG_PATH);
     }
 
 }

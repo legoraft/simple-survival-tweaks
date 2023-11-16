@@ -67,7 +67,7 @@ public class configScreen extends SpruceScreen {
         config config = survivalTweaks.CONFIG;
         Properties properties = new Properties();
         config.write(properties);
-        config.save();
+        config.save(survivalTweaks.CONFIG_PATH);
         this.client.setScreen(parent);
     }
 
