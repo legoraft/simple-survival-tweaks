@@ -1,7 +1,5 @@
 package com.survivaltweaks.mixin;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.survivaltweaks.config;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

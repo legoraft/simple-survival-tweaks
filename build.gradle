@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
+	id 'fabric-loom' version '1.4-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,7 +11,6 @@ base {
 }
 
 repositories {
-	maven { url = "https://jitpack.io" }
 	maven { url = "https://maven.gegy.dev" }
 	maven { url = "https://maven.terraformersmc.com/" }
 }
@@ -37,7 +36,6 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	include(implementation(annotationProcessor "com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}"))
 	include modImplementation("dev.lambdaurora:spruceui:${project.spruceui_version}")
 
 	modApi "com.terraformersmc:modmenu:${project.modmenu_version}"
