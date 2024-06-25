@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradedItem;
 
 public class survivalTweaksRegistries {
 
@@ -21,7 +22,7 @@ public class survivalTweaksRegistries {
 
     private static void registerDebugStickTrade() {
         ItemStack debugStick = Items.DEBUG_STICK.getDefaultStack();
-        TradeOfferHelper.registerWanderingTraderOffers(2, factory -> factory.add((((entity, random) -> new TradeOffer(new ItemStack(Items.EMERALD, 5), debugStick, 2, 1, 1.0F)))));
+        TradeOfferHelper.registerWanderingTraderOffers(2, factory -> factory.add((((entity, random) -> new TradeOffer(new TradedItem(Items.EMERALD), debugStick, 2, 1, 1.0F)))));
     }
 
 }

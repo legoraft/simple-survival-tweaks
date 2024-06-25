@@ -3,11 +3,14 @@ package com.survivaltweaks.mixin;
 import com.survivaltweaks.config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.DebugStickStateComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DebugStickItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
@@ -41,30 +44,38 @@ public abstract class debugStickMixin {
         if (player.isCreativeLevelTwoOp() || !config.SURVIVAL_DEBUG_STICK) { return; }
 
         Block block = state.getBlock();
-        StateManager<Block, BlockState> stateManager = block.getStateManager();
+        RegistryEntry<Block> registryEntry = state.getRegistryEntry();
+        StateManager<Block, BlockState> stateManager = registryEntry.value().getStateManager();
         Collection<Property<?>> collection = stateManager.getProperties();
 
-        NbtCompound nbtCompound = stack.getOrCreateSubNbt("debugProp");
+        DebugStickStateComponent stateComponent = stack.get(DataComponentTypes.DEBUG_STICK_STATE);
 
-        String blockName = Registries.BLOCK.getId(block).toString();
-        String propertyName = nbtCompound.getString(blockName);
-
-        Property<?> property = stateManager.getProperty(propertyName);
-
-        if (player.isSneaking()) {
-            property = getNextProperty(collection, property);
-            nbtCompound.putString(blockName, property.getName());
-            sendMessage(player, Text.translatable("debugstick.select", property.getName(), getValueString(state, property)));
-        } else {
-            if (collection.isEmpty() || property == null) {
-            sendMessage(player, Text.translatable("debugstick.empty", blockName));
+        if (stateComponent == null) {
             return;
+        }
+
+        Property<?> property = stateComponent.properties().get(registryEntry);
+
+        if (update) {
+            if (property == null) {
+                property = getNextProperty(collection, null);
             }
-            BlockState newState = cycle(state, property, false);
+
+            BlockState newState = getNextBlockState(state, property);
             world.setBlockState(pos, newState, 18);
-            sendMessage(player, Text.translatable("debugstick.modify", property.getName(), getValueString(newState, property)));
+
+        } else {
+            property = getNextProperty(collection, property);
+            stack.set(DataComponentTypes.DEBUG_STICK_STATE, stateComponent.with(registryEntry, property));
         }
         cir.setReturnValue(true);
+    }
+
+    @Unique
+    private <T extends Comparable<T>> BlockState getNextBlockState(BlockState state, Property<T> property) {
+        T value =  state.get(property);
+
+        return state.with(property, value);
     }
 
     @Unique
