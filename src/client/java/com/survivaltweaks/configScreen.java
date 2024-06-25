@@ -26,6 +26,7 @@ public class configScreen extends GameOptionsScreen {
     public CyclingButtonWidget noExpensiveToggle;
     public CyclingButtonWidget cheapRenameToggle;
     public CyclingButtonWidget noXpPenaltyToggle;
+    public CyclingButtonWidget phantomMobCap;
 
     public ButtonWidget doneButton;
 
@@ -46,11 +47,14 @@ public class configScreen extends GameOptionsScreen {
         noXpPenaltyToggle = CyclingButtonWidget.onOffBuilder(config.NO_XP_PENALTY)
                 .build(Text.translatable("config.noxppenalty"), ((button, value) -> config.NO_XP_PENALTY = !config.NO_XP_PENALTY));
 
+        phantomMobCap = CyclingButtonWidget.onOffBuilder(config.PHANTOM_MOBCAP)
+                .build(Text.translatable("config.noxppenalty"), ((button, value) -> config.PHANTOM_MOBCAP = !config.PHANTOM_MOBCAP));
+
         OptionListWidget optionListWidget = this.addDrawableChild(new OptionListWidget(this.client, this.width, this));
 
         optionListWidget.addWidgetEntry(survivalDebugStickToggle, endermanGriefToggle);
         optionListWidget.addWidgetEntry(noExpensiveToggle, cheapRenameToggle);
-        optionListWidget.addWidgetEntry(noXpPenaltyToggle, null);
+        optionListWidget.addWidgetEntry(noXpPenaltyToggle, phantomMobCap);
 
         doneButton = ButtonWidget
                 .builder(Text.translatable("config.done"), button -> close())
