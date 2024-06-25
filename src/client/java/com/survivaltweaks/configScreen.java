@@ -2,6 +2,7 @@ package com.survivaltweaks;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.screen.option.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.CyclingButtonWidget;
@@ -10,7 +11,7 @@ import net.minecraft.text.Text;
 
 import java.util.Properties;
 
-public class configScreen extends OptionsScreen {
+public class configScreen extends GameOptionsScreen {
 
     public Screen parent;
 
@@ -31,19 +32,19 @@ public class configScreen extends OptionsScreen {
     @Override
     protected void init() {
         survivalDebugStickToggle = CyclingButtonWidget.onOffBuilder(config.SURVIVAL_DEBUG_STICK)
-                .build(Text.translatable("config.doublehotbar"), ((button, value) -> config.SURVIVAL_DEBUG_STICK = !config.SURVIVAL_DEBUG_STICK));
+                .build(Text.translatable("config.survivaldebugstick"), ((button, value) -> config.SURVIVAL_DEBUG_STICK = !config.SURVIVAL_DEBUG_STICK));
 
         endermanGriefToggle = CyclingButtonWidget.onOffBuilder(config.NO_ENDERMAN_GRIEF)
-                .build(Text.translatable("config.bettermounthud"), (button, value) -> config.NO_ENDERMAN_GRIEF = !config.NO_ENDERMAN_GRIEF);
+                .build(Text.translatable("config.noendermangrief"), (button, value) -> config.NO_ENDERMAN_GRIEF = !config.NO_ENDERMAN_GRIEF);
 
         noExpensiveToggle = CyclingButtonWidget.onOffBuilder(config.NO_EXPENSIVE)
-                .build(Text.translatable("config.armorvisible"), (button, value) -> config.NO_EXPENSIVE = !config.NO_EXPENSIVE);
+                .build(Text.translatable("config.notooexpensive"), (button, value) -> config.NO_EXPENSIVE = !config.NO_EXPENSIVE);
 
         cheapRenameToggle = CyclingButtonWidget.onOffBuilder(config.CHEAP_RENAME)
-                .build(Text.translatable("config.righttoleft"), (button, value) -> config.CHEAP_RENAME = !config.CHEAP_RENAME);
+                .build(Text.translatable("config.cheaprename"), (button, value) -> config.CHEAP_RENAME = !config.CHEAP_RENAME);
 
         noXpPenaltyToggle = CyclingButtonWidget.onOffBuilder(config.NO_XP_PENALTY)
-                .build(Text.translatable("config.disablearmorbar"), ((button, value) -> config.NO_XP_PENALTY = !config.NO_XP_PENALTY));
+                .build(Text.translatable("config.noxppenalty"), ((button, value) -> config.NO_XP_PENALTY = !config.NO_XP_PENALTY));
 
         OptionListWidget optionListWidget = this.addDrawableChild(new OptionListWidget(this.client, this.width, this));
 
@@ -83,7 +84,6 @@ public class configScreen extends OptionsScreen {
         Properties properties = new Properties();
         config.write(properties);
         config.save(survivalTweaks.CONFIG_PATH);
-        this.client.setScreen(parent);
     }
 
 }
