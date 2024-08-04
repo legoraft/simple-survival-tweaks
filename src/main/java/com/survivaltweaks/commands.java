@@ -64,6 +64,16 @@ public class commands {
                                 })
                         )
                 )
+                .then(CommandManager.literal("phantomMobcap").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "phantomMobcap", config.PHANTOM_MOBCAP)); return 1;})
+                        .then(CommandManager.argument("boolean", bool())
+                                .executes(c -> {
+                                    config.PHANTOM_MOBCAP = getBool(c, "boolean");
+                                    applyChanges();
+                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "phantomMobcap", config.PHANTOM_MOBCAP));
+                                    return 1;
+                                })
+                        )
+                )
         );
     }
 
@@ -71,7 +81,7 @@ public class commands {
         config config = survivalTweaks.CONFIG;
         java.util.Properties properties = new java.util.Properties();
         config.write(properties);
-        config.save();
+        config.save(survivalTweaks.CONFIG_PATH);
     }
 
 }

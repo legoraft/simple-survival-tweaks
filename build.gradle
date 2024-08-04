@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
+	id 'fabric-loom' version '1.6-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,8 +11,6 @@ base {
 }
 
 repositories {
-	maven { url = "https://jitpack.io" }
-	maven { url = "https://maven.gegy.dev" }
 	maven { url = "https://maven.terraformersmc.com/" }
 }
 
@@ -28,6 +26,12 @@ loom {
 
 }
 
+configurations.configureEach {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:$loader_version")
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -36,9 +40,6 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	include(implementation(annotationProcessor "com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}"))
-	include modImplementation("dev.lambdaurora:spruceui:${project.spruceui_version}")
 
 	modApi "com.terraformersmc:modmenu:${project.modmenu_version}"
 
@@ -70,7 +71,7 @@ java {
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_${project.base.archivesName.get()}"}
 	}
 }
 

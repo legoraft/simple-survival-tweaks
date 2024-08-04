@@ -3,10 +3,10 @@
   "package": "com.survivaltweaks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "anvilScreenMixin",
+    "anvilScreenHandlerMixin",
     "debugStickMixin",
-    "itemStackMixin",
     "enderManMixin",
+    "phantomSpawnerMixin",
     "playerEntityMixin"
   ],
   "injectors": {
