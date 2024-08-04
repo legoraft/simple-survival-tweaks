@@ -30,15 +30,6 @@ import java.util.Collection;
 @Mixin(DebugStickItem.class)
 public abstract class debugStickMixin {
 
-    @Shadow
-    private static void sendMessage(PlayerEntity player, Text message) { }
-
-    @Shadow
-    private static <T extends Comparable<T>> BlockState cycle(BlockState state, Property<T> property, boolean inverse) { return null; }
-
-    @Shadow
-    private static <T extends Comparable<T>> String getValueString(BlockState state, Property<T> property) { return null; }
-
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void survivalDebug(PlayerEntity player, BlockState state, WorldAccess world, BlockPos pos, boolean update, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (player.isCreativeLevelTwoOp() || !config.SURVIVAL_DEBUG_STICK) { return; }
