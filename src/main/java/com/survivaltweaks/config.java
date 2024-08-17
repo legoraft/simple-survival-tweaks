@@ -25,7 +25,7 @@ public class config {
         properties.setProperty("phantom_mobcap", Boolean.toString(PHANTOM_MOBCAP));
     }
 
-    public void read(Properties properties) {
+    public static void read(Properties properties) {
         SURVIVAL_DEBUG_STICK = Boolean.parseBoolean(properties.getProperty("survival_debug_stick"));
         NO_EXPENSIVE = Boolean.parseBoolean(properties.getProperty("no_too_expensive"));
         CHEAP_RENAME = Boolean.parseBoolean(properties.getProperty("cheap_rename"));
@@ -53,7 +53,7 @@ public class config {
         }
     }
 
-    public void load(Path configPath) {
+    public static void load(Path configPath) {
         Properties properties = new Properties();
         if (!Files.exists(configPath)) {
             try {

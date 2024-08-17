@@ -29,6 +29,7 @@ public class survivalTweaks implements ModInitializer {
             }
 
             CONFIG_PATH = configDir.resolve("survivaltweaks.properties");
+            config.load(CONFIG_PATH);
         }));
 
         ServerWorldEvents.UNLOAD.register(((server, world) -> {
