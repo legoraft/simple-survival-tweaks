@@ -16,7 +16,7 @@ public class config {
     public static boolean NO_XP_PENALTY = false;
     public static boolean PHANTOM_MOBCAP = false;
 
-    public void write(Properties properties) {
+    public static void write(Properties properties) {
         properties.setProperty("survival_debug_stick", Boolean.toString(SURVIVAL_DEBUG_STICK));
         properties.setProperty("no_too_expensive", Boolean.toString(NO_EXPENSIVE));
         properties.setProperty("cheap_rename", Boolean.toString(CHEAP_RENAME));
@@ -34,7 +34,7 @@ public class config {
         PHANTOM_MOBCAP = Boolean.parseBoolean(properties.getProperty("phantom_mobcap"));
     }
 
-    public void save(Path configPath) {
+    public static void save(Path configPath) {
         Properties properties = new Properties();
         write(properties);
         if (!Files.exists(configPath)) {

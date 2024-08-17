@@ -10,7 +10,6 @@ import java.nio.file.Path;
 
 public class survivalTweaks implements ModInitializer {
 
-    public static final config CONFIG = new config();
     public static Path CONFIG_PATH = null;
 
     public void onInitialize() {
@@ -29,12 +28,11 @@ public class survivalTweaks implements ModInitializer {
                 }
             }
 
-            CONFIG.load(configDir.resolve("survivaltweaks.properties"));
             CONFIG_PATH = configDir.resolve("survivaltweaks.properties");
         }));
 
         ServerWorldEvents.UNLOAD.register(((server, world) -> {
-            CONFIG.save(CONFIG_PATH);
+            config.save(CONFIG_PATH);
         }));
     }
 
