@@ -16,62 +16,62 @@ public class commands {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess, CommandManager.RegistrationEnvironment registrationEnvironment) {
 
         dispatcher.register(CommandManager.literal("survivaltweaks")
-                .then(CommandManager.literal("noExpensive").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "noExpensive", config.NO_EXPENSIVE)); return 1;})
+                .then(CommandManager.literal("noExpensive").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "noExpensive", "%s".formatted(config.NO_EXPENSIVE)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_EXPENSIVE = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "noExpensive", config.NO_EXPENSIVE));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "noExpensive", "%s".formatted(config.NO_EXPENSIVE)), false);
                                     return 1;
                                 })
                         )
                 )
-                .then(CommandManager.literal("noEndermanGriefing").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "NoEndermanGriefing", config.NO_ENDERMAN_GRIEF)); return 1;})
+                .then(CommandManager.literal("noEndermanGriefing").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "noEndermanGriefing", "%s".formatted(config.NO_ENDERMAN_GRIEF)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_ENDERMAN_GRIEF = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "NoEndermanGriefing", config.NO_ENDERMAN_GRIEF));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "noEndermanGriefing", "%s".formatted(config.NO_ENDERMAN_GRIEF)), false);
                                     return 1;
                                 })
                         )
                 )
-                .then(CommandManager.literal("survivalDebugStick").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "survivalDebugStick", config.SURVIVAL_DEBUG_STICK)); return 1;})
+                .then(CommandManager.literal("survivalDebugStick").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "survivalDebugStick", "%s".formatted(config.SURVIVAL_DEBUG_STICK)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.SURVIVAL_DEBUG_STICK = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "survivalDebugStick", config.SURVIVAL_DEBUG_STICK));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "survivalDebugStick", "%s".formatted(config.SURVIVAL_DEBUG_STICK)), false);
                                     return 1;
                                 })
                         )
                 )
-                .then(CommandManager.literal("cheapRename").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "cheapRename", config.CHEAP_RENAME)); return 1;})
+                .then(CommandManager.literal("cheapRename").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "cheapRename", "%s".formatted(config.CHEAP_RENAME)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.CHEAP_RENAME = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "cheapRename", config.CHEAP_RENAME));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "cheapRename", "%s".formatted(config.CHEAP_RENAME)), false);
                                     return 1;
                                 })
                         )
                 )
-                .then(CommandManager.literal("noXpPenalty").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "noXpPenalty", config.NO_XP_PENALTY)); return 1;})
+                .then(CommandManager.literal("noXpPenalty").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "noXpPenalty", "%s".formatted(config.NO_XP_PENALTY)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_XP_PENALTY = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "noXpPenalty", config.NO_XP_PENALTY));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "noXpPenalty", "%s".formatted(config.NO_XP_PENALTY)), false);
                                     return 1;
                                 })
                         )
                 )
-                .then(CommandManager.literal("phantomMobcap").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "phantomMobcap", config.PHANTOM_MOBCAP)); return 1;})
+                .then(CommandManager.literal("phantomMobcap").executes(c -> { c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.query", "phantomMobcap", "%s".formatted(config.PHANTOM_MOBCAP)), false); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.PHANTOM_MOBCAP = getBool(c, "boolean");
                                     config.save(survivalTweaks.CONFIG_PATH);
-                                    c.getSource().sendMessage(Text.translatable("commands.tweak.set", "phantomMobcap", config.PHANTOM_MOBCAP));
+                                    c.getSource().sendFeedback(() -> Text.translatable("commands.tweak.set", "phantomMobcap", "%s".formatted(config.PHANTOM_MOBCAP)), false);
                                     return 1;
                                 })
                         )
