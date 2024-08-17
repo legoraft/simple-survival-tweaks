@@ -15,14 +15,12 @@ public class commands {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess, CommandManager.RegistrationEnvironment registrationEnvironment) {
 
-        Path configPath = survivalTweaks.CONFIG_PATH;
-
         dispatcher.register(CommandManager.literal("survivaltweaks")
                 .then(CommandManager.literal("noExpensive").executes(c -> { c.getSource().sendMessage(Text.translatable("commands.tweak.query", "noExpensive", config.NO_EXPENSIVE)); return 1;})
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_EXPENSIVE = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "noExpensive", config.NO_EXPENSIVE));
                                     return 1;
                                 })
@@ -32,7 +30,7 @@ public class commands {
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_ENDERMAN_GRIEF = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "NoEndermanGriefing", config.NO_ENDERMAN_GRIEF));
                                     return 1;
                                 })
@@ -42,7 +40,7 @@ public class commands {
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.SURVIVAL_DEBUG_STICK = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "survivalDebugStick", config.SURVIVAL_DEBUG_STICK));
                                     return 1;
                                 })
@@ -52,7 +50,7 @@ public class commands {
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.CHEAP_RENAME = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "cheapRename", config.CHEAP_RENAME));
                                     return 1;
                                 })
@@ -62,7 +60,7 @@ public class commands {
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.NO_XP_PENALTY = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "noXpPenalty", config.NO_XP_PENALTY));
                                     return 1;
                                 })
@@ -72,7 +70,7 @@ public class commands {
                         .then(CommandManager.argument("boolean", bool())
                                 .executes(c -> {
                                     config.PHANTOM_MOBCAP = getBool(c, "boolean");
-                                    config.save(configPath);
+                                    config.save(survivalTweaks.CONFIG_PATH);
                                     c.getSource().sendMessage(Text.translatable("commands.tweak.set", "phantomMobcap", config.PHANTOM_MOBCAP));
                                     return 1;
                                 })
